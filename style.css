@@ -7,18 +7,49 @@ a {
   color: black;
 }
 
+h1 {
+  margin: 0;
+}
+
 .title {
   font-style: none;
   text-align: center;
   border-bottom: #000 solid 1px;
+  padding: 30px;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-content {
+.grid {
   display: grid;
   grid-template-columns: 150px 1fr;
+}
+
+aside {
+  border-right: #000 solid 1px;
+}
+
+.grid ul {
+  list-style: none;
+  padding: 30px;
+  margin: 0;
+}
+
+.content {
+  padding: 30px;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    display: block;
+  }
+
+  .title {
+    font-style: none;
+    text-align: center;
+    border-bottom: none;
+    padding: 30px;
+  }
+
+  aside {
+    border-right: none;
+  }
 }
