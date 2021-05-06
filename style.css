@@ -1,201 +1,148 @@
-*{
-  font-family: 'Montserrat', sans-serif;
+body,
+div,
+span,
+header,
+section,
+footer,
+nav,
+img,
+form,
+figcaption,
+figure,
+i,
+p {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  line-height: 100%;
+  margin: 0;
+}
+
+ol,
+header ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body a:link {
+  color: black;
+  text-decoration: none;
+}
+body a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+body header a:hover {
+  color: #c79288;
+  text-decoration: none;
   
+  transition: .2s linear;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
 }
 
-body {
-  margin: 0;
-  height: 70vh;
-  /* background-image: url('https://images.unsplash.com/photo-1488921618671-463b781ac428?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-  background-repeat: no-repeat;
-  background-size: 70vh; */
-}
-
-.grid a {
-  text-decoration: none;
-  color: black;
-}
-
-h1, h2, p, li {
-  margin: 0;
-  text-decoration: none;
-  list-style: none;
-}
-
 header {
-  font-style: none;
-  text-align: left;
-}
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 
-.title{
-  padding: 10px;
-  text-decoration: none;
-  height: 1vh;
-}
-
-.scroll-container{
-  display: block;
-  text-align:center;
-  margin:auto;
-  overflow-y: scroll;
-}
-
-.content_box{
-  height: 70vh;
-  padding: 7%;
-  /* background-color: tan; */
-}
-
-.content_wrapper{
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-
-  padding-right: 4vw;
-  padding-left: 4vw;
-  padding-top: 20vh;
-  padding-bottom: 20vh;
-
-  margin: 0 auto;
-  
-  box-sizing: content-box;
-  position: relative;
-  
-  width: 1200px;
-  
-  /* background-color: pink; */
+  justify-content: space-between;
+  padding: 1rem;
 }
 
-.hi{
-  display: block;
-  margin: 0 auto;
-  color: #111;
-  font-size: 20px;
-  padding-bottom: 50px;
-}
-
-.btn_about{
-  background-color: #c79288;
-  display: block;
-  border: none;
-  padding: 1em 2em;
-  width: 200px;
-  height: 60px;
-  text-decoration: none;
-  margin: 0 auto;
-  font-size: 100%;
-}
-
-.btn_about a{
-  text-decoration: none;
-  color: #fff;
-}
-
-.content_intro{
-  margin: 0 auto;
-  width: 500px;
-  height: 500px;
-}
-
-.content_project_image img{
-  width: 300px;
-}
-
-
-.grid {
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-}
-
-header nav ul{
-  list-style: none;
-  margin: 0 auto;
-  width: 300px;
-}
-
-header div ul{
-  list-style: none;
-  margin: 0;
-  width: 300px;
-  float: right;
-}
-
-li {
-  float: left;
+nav,
+.icons {
   padding: 20px;
 }
 
-.content {
-  padding: 30px;
+li {
+  display: inline;
+  padding: 20px;
 }
 
-.content_wrapper2{
+main{
   display: flex;
-  justify-content: center;
-
-  padding-right: 4vw;
-  padding-left: 4vw;
-  padding-top: 20vh;
-  padding-bottom: 20vh;
-
-  margin: 0 auto;
-  
-  box-sizing: content-box;
-  position: relative;
-  
-  width: 1200px;
-  
-  /* background-color: pink; */
+  flex-direction: column;
 }
 
-.lastest_project{
-  display: block;
-  margin: 0 auto;
-  color: #111;
-  font-size: 20px;
-  padding-bottom: 50px;
+#section1,
+#section2,
+#section3,
+#section4{
+  height: 100vh;
+}
+
+.content_wrapper{
+  height: 100vh;
+  
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: center; /*수직축(flex direction의 축) 가운데 정렬*/
+  align-items: center; /*수평축 가운데 정렬*/
+}
+
+.content_wrapper h1{
+  padding: 40px;
+  line-height: 130%;
+  font-weight: bold;
+}
+#section1 .btn_about{
+  border: 0;
+  outline: 0;
+  width: 150px;
+  height: 50px;
+
+  background-color: #c79288;
+ 
+}
+
+.hover1:hover {
+  opacity: 0.7;
+  transition: .2s linear;
+}
+
+.bg_image{
+  border: 0;
+  padding: 0;
+  background-image: url(image/ocean1.jpg);
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-size: cover;
 }
 
 .content_project_image{
   display: flex;
-}
-.content_project_image a{
-  text-decoration: none;
-  color: #000;
+  flex-direction: row;
 }
 
-.date, .project_title, .project_desc{
-  text-align: center;
-  padding: 2px;
-}
-.date{
-  color: #999;
-}
-.content_project_image1, .content_project_image2, .content_project_image3{
-  padding: 20px;
-
-}
-
-
-
-
-
-
-
-/* 화면조정시 */
-@media (max-width: 600px) {
-  .grid {
-    display: block;
+@media (max-width: 1032px) {
+  header {
+    display: flex;
+    flex-direction: column;
   }
-
   .title {
-    font-style: none;
     text-align: center;
-    border-bottom: none;
   }
-
-  aside {
-    border-right: none;
+  nav,
+  .icons {
+    margin: 0 auto;
+    padding: 5px;
   }
 }
