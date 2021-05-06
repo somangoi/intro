@@ -21,7 +21,7 @@ h2,
 h3,
 h4,
 h5,
-h6{
+h6 {
   line-height: 100%;
   margin: 0;
 }
@@ -45,8 +45,7 @@ body a:visited {
 body header a:hover {
   color: #c79288;
   text-decoration: none;
-  
-  transition: .2s linear;
+  transition: 0.2s linear;
 }
 
 * {
@@ -70,12 +69,17 @@ nav,
   padding: 20px;
 }
 
-li {
+nav li {
   display: inline;
   padding: 20px;
 }
 
-main{
+.icons li {
+  display: inline;
+  padding-right: 20px;
+}
+
+main {
   display: flex;
   flex-direction: column;
 }
@@ -83,41 +87,40 @@ main{
 #section1,
 #section2,
 #section3,
-#section4{
+#section4 {
   height: 100vh;
 }
 
-.content_wrapper{
+/* setion 1 */
+.content_wrapper {
   height: 100vh;
-  
+
   display: flex;
   flex-direction: column;
-  
+
   justify-content: center; /*수직축(flex direction의 축) 가운데 정렬*/
   align-items: center; /*수평축 가운데 정렬*/
 }
 
-.content_wrapper h1{
+.content_wrapper h1 {
   padding: 40px;
   line-height: 130%;
   font-weight: bold;
 }
-#section1 .btn_about{
+#section1 .btn_about {
   border: 0;
   outline: 0;
   width: 150px;
   height: 50px;
-
   background-color: #c79288;
- 
 }
 
 .hover1:hover {
+  transition: 0.2s linear;
   opacity: 0.7;
-  transition: .2s linear;
 }
 
-.bg_image{
+.bg_image {
   border: 0;
   padding: 0;
   background-image: url(image/ocean1.jpg);
@@ -127,9 +130,21 @@ main{
   background-size: cover;
 }
 
-.content_project_image{
+/* section 2 */
+
+/* section 4 */
+.content_project_image {
   display: flex;
   flex-direction: row;
+}
+
+.content_project_image a {
+  padding: 1rem;
+  text-align: center;
+}
+
+.content_project_image img {
+  width: 300px;
 }
 
 @media (max-width: 1032px) {
