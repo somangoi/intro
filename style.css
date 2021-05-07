@@ -27,7 +27,8 @@ h6 {
 }
 
 ol,
-header ul {
+header ul,
+div ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -49,7 +50,7 @@ body header a:hover {
 }
 
 * {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat",'Nanum Gothic', sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -79,11 +80,6 @@ nav li {
   padding-right: 20px;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-}
-
 #section1,
 #section2,
 #section3,
@@ -92,7 +88,7 @@ main {
 }
 
 /* setion 1 */
-.content_wrapper {
+.content_wrapper_1 {
   height: 100vh;
 
   display: flex;
@@ -102,12 +98,13 @@ main {
   align-items: center; /*수평축 가운데 정렬*/
 }
 
-.content_wrapper h1 {
+.content_wrapper_1 h1 {
   padding: 40px;
   line-height: 130%;
   font-weight: bold;
 }
-#section1 .btn_about {
+
+button {
   border: 0;
   outline: 0;
   width: 150px;
@@ -131,11 +128,117 @@ main {
 }
 
 /* section 2 */
+.content_wrapper_2 {
+  display: grid;
+  grid-template-columns: 250px 350px;
+  grid-template-rows: auto 100px 30px 30px auto;
+  gap: 20px;
+  justify-content: center;
+  height: 100%;
+  margin: auto 0;
+}
 
-/* section 4 */
-.content_project_image {
+.title_about{
+  align-self: end;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.profile_img{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 5;
+}
+
+.about_desc{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  padding: 10px;
+}
+
+.title_skills{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+.skills{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 4;
+  grid-row-end: 5;
+}
+
+.btn_contact{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 5;
+  grid-row-end: 6;
+}
+
+.title_about h1{
+  padding-bottom: 20px;
+}
+
+.profile{
+  width: 250px;
+  border-radius: 50%;
+}
+
+.title_skills h2{
+  font-size: 25px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.skills ul li{
+  display: inline;
+  padding: 10px;
+}
+
+.btn_contact{
+  padding: 10px;
+}
+
+/* section 3 */
+#section3{
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center; 
+  background-color: #c79288;
+}
+
+.lastest_project{
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.lastest_project h1{
+  font-weight: bold;
+}
+
+.date{
+  color: gray;
+  padding-top: 10px;
+}
+
+.project_title h2{
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.content_project_image{
   display: flex;
   flex-direction: row;
+  justify-content: center; 
+  align-items: center; 
 }
 
 .content_project_image a {
@@ -147,14 +250,43 @@ main {
   width: 300px;
 }
 
+/* section 4 */
+#section4{
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /*수직축(flex direction의 축) 가운데 정렬*/
+  align-items: center; /*수평축 가운데 정렬*/
+}
+
+.section4_title{
+  padding-bottom: 20px;
+}
+
+#section4 form{
+  width: 400px;
+}
+
+#section4 button{
+  display: block;
+  float: right;
+  margin-top: 20px;
+}
 @media (max-width: 1032px) {
-  header {
+  header,
+  .content_project_image {
     display: flex;
     flex-direction: column;
+  
   }
+
+  #section3{
+    height: auto;
+  }
+
   .title {
     text-align: center;
   }
+
   nav,
   .icons {
     margin: 0 auto;
