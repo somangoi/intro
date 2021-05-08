@@ -50,7 +50,7 @@ body header a:hover {
 }
 
 * {
-  font-family: "Montserrat",'Nanum Gothic', sans-serif;
+  font-family: "Montserrat", "Nanum Gothic", sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -138,7 +138,7 @@ button {
   margin: auto 0;
 }
 
-.title_about{
+.title_about {
   align-self: end;
   grid-column-start: 1;
   grid-column-end: 3;
@@ -146,14 +146,14 @@ button {
   grid-row-end: 2;
 }
 
-.profile_img{
+.profile_img {
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 5;
 }
 
-.about_desc{
+.about_desc {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 2;
@@ -161,84 +161,84 @@ button {
   padding: 10px;
 }
 
-.title_skills{
+.title_skills {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 3;
   grid-row-end: 4;
 }
 
-.skills{
+.skills {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 4;
   grid-row-end: 5;
 }
 
-.btn_contact{
+.btn_contact {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 5;
   grid-row-end: 6;
 }
 
-.title_about h1{
+.title_about h1 {
   padding-bottom: 20px;
 }
 
-.profile{
+.profile {
   width: 250px;
   border-radius: 50%;
 }
 
-.title_skills h2{
+.title_skills h2 {
   font-size: 25px;
   font-weight: bold;
   padding: 10px;
 }
 
-.skills ul li{
+.skills ul li {
   display: inline;
   padding: 10px;
 }
 
-.btn_contact{
+.btn_contact {
   padding: 10px;
 }
 
 /* section 3 */
-#section3{
+#section3 {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   background-color: #c79288;
 }
 
-.lastest_project{
+.lastest_project {
   padding: 20px;
   margin-top: 20px;
 }
 
-.lastest_project h1{
+.lastest_project h1 {
   font-weight: bold;
 }
 
-.date{
+.date {
   color: gray;
   padding-top: 10px;
 }
 
-.project_title h2{
+.project_title h2 {
   font-weight: bold;
   font-size: 25px;
 }
 
-.content_project_image{
+.content_project_image {
   display: flex;
   flex-direction: row;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
 }
 
 .content_project_image a {
@@ -251,22 +251,22 @@ button {
 }
 
 /* section 4 */
-#section4{
+#section4 {
   display: flex;
   flex-direction: row;
   justify-content: center; /*수직축(flex direction의 축) 가운데 정렬*/
   align-items: center; /*수평축 가운데 정렬*/
 }
 
-.section4_title{
+.section4_title {
   padding-bottom: 20px;
 }
 
-#section4 form{
+#section4 form {
   width: 400px;
 }
 
-#section4 button{
+#section4 button {
   display: block;
   float: right;
   margin-top: 20px;
@@ -276,10 +276,10 @@ button {
   .content_project_image {
     display: flex;
     flex-direction: column;
-  
   }
 
-  #section3{
+  #section3,
+  #section2 {
     height: auto;
   }
 
@@ -291,5 +291,9 @@ button {
   .icons {
     margin: 0 auto;
     padding: 5px;
+  }
+  .content_wrapper_2 {
+    display: block;
+    padding: 10%;
   }
 }
