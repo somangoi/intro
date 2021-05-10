@@ -54,6 +54,8 @@ body header a:hover {
   scroll-behavior: smooth;
 }
 
+/* header */
+
 header {
   position: fixed;
   top: 0;
@@ -70,9 +72,9 @@ nav,
   padding: 20px;
 }
 
-nav li {
-  display: inline;
-  padding: 20px;
+nav ul li {
+  display: inline-block;
+  padding: 0 10px;
 }
 
 .icons li {
@@ -290,7 +292,8 @@ button {
   nav,
   .icons {
     margin: 0 auto;
-    padding: 5px;
+    padding: 10px;
+    width: 100%;
   }
   .content_wrapper_2 {
     display: block;
