@@ -293,7 +293,7 @@ button {
   .icons {
     margin: 0 auto;
     padding: 10px;
-    width: 100%;
+    display: block;
   }
   .content_wrapper_2 {
     display: block;
