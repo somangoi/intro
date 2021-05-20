@@ -27,8 +27,7 @@ h6 {
 }
 
 ol,
-header ul,
-div ul {
+ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -46,7 +45,7 @@ body a:visited {
 body header a:hover {
   color: #c79288;
   text-decoration: none;
-  transition: 0.2s linear;
+  transition: 0.3s linear;
 }
 
 * {
@@ -54,30 +53,60 @@ body header a:hover {
   scroll-behavior: smooth;
 }
 
-/* header */
+/* 풀페이지 메뉴 숨기기 */
+.overlay {
+  display: none;
+}
 
-header {
+/* header */
+#header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-
   display: flex;
   justify-content: space-between;
   padding: 1rem;
+  z-index: 1000;
 }
 
-nav,
-.icons {
+.title {
+  padding: 0.5rem;
+}
+
+.menu_box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header_active {
+  background-color: white;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+}
+
+.header_deactive {
+  background-color: transparent;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+}
+
+/* 햄버거 버튼 숨기기 */
+.hamburger-button {
+  display: none;
+}
+
+.menu_list,
+.icon_list {
   padding: 20px;
 }
 
-nav ul li {
+.menu_list ul li {
   display: inline-block;
   padding: 0 10px;
 }
 
-.icons li {
+#icons li {
   display: inline;
   padding-right: 20px;
 }
@@ -100,10 +129,26 @@ nav ul li {
   align-items: center; /*수평축 가운데 정렬*/
 }
 
-.content_wrapper_1 h1 {
-  padding: 40px;
-  line-height: 130%;
+.text_hi {
+  height: 170px;
+  width: 420px;
+}
+
+.content_wrapper_1 .hi {
+  font-size: 2rem;
   font-weight: bold;
+}
+
+.blink {
+  animation: blink 0.5s infinite;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  to {
+    opacity: 0;
+  }
 }
 
 button {
@@ -111,7 +156,9 @@ button {
   outline: 0;
   width: 150px;
   height: 50px;
+  margin: 10px;
   background-color: #c79288;
+  float: right;
 }
 
 .hover1:hover {
@@ -132,10 +179,11 @@ button {
 /* section 2 */
 .content_wrapper_2 {
   display: grid;
-  grid-template-columns: 250px 350px;
-  grid-template-rows: auto 100px 30px 30px auto;
+  grid-template-columns: 250px 400px;
+  grid-template-rows: auto 100px 30px 80px auto;
   gap: 20px;
   justify-content: center;
+  min-height: 100vh;
   height: 100%;
   margin: auto 0;
 }
@@ -188,6 +236,11 @@ button {
   padding-bottom: 20px;
 }
 
+.title_about_desc {
+  font-size: 25px;
+  font-weight: bold;
+}
+
 .profile {
   width: 250px;
   border-radius: 50%;
@@ -199,9 +252,41 @@ button {
   padding: 10px;
 }
 
-.skills ul li {
-  display: inline;
+.skills {
+  display: inline-block;
   padding: 10px;
+}
+
+.round {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.round strong {
+  position: absolute;
+  top: 61%;
+  left: 51%;
+  margin-top: -35px;
+  transform: translate(-50%);
+  font-size: 13px;
+  color: #c79288;
+  font-weight: 100;
+}
+
+.round span {
+  display: block;
+  color: #999;
+  font-size: 15px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.round span i {
+  color: #c79288;
+  font-size: 10px;
+  margin-right: 7px;
 }
 
 .btn_contact {
@@ -273,30 +358,184 @@ button {
   float: right;
   margin-top: 20px;
 }
+
+/* footer */
+footer {
+  height: auto;
+  background-color: #c79288;
+}
+
+footer div {
+  text-align: center;
+  padding: 1rem;
+}
+
+/* scroll animation setting */
+[data-trigger] {
+  opacity: 0;
+  position: relative;
+  top: 30px;
+  transition: 1s ease-out;
+}
+
+[data-trigger].visible {
+  opacity: 1;
+  top: 0;
+}
+
 @media (max-width: 1032px) {
-  header,
+  /* title만 남기고 original menu & icons 감추기*/
+  .menu_box {
+    display: none;
+  }
+
+  /* hamburger button 나타내기*/
+
+  .hamburger-button {
+    display: inline;
+    position: absolute;
+    transition: 0.3s ease-in-out;
+    width: 30px;
+    height: 20px;
+    top: 2rem;
+    right: 2rem;
+    z-index: 100;
+  }
+
+  .hamburger-button span {
+    position: absolute;
+    height: 3px;
+    width: 100%;
+
+    background-color: rgb(78, 78, 78);
+    top: 0;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  }
+
+  .hamburger-button span:nth-child(1) {
+    top: 0px;
+  }
+
+  .hamburger-button span:nth-child(2),
+  .hamburger-button span:nth-child(3) {
+    top: 9px;
+  }
+
+  .hamburger-button span:nth-child(4) {
+    top: 18px;
+  }
+
+  .hamburger-button.active span:nth-child(1),
+  .hamburger-button.active span:nth-child(4) {
+    opacity: 0;
+  }
+
+  .hamburger-button.active span:nth-child(2) {
+    transform: rotate(45deg);
+  }
+
+  .hamburger-button.active span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+
+  /* 풀페이지 메뉴 보이기 */
+  .overlay {
+    position: fixed;
+    background: #fff;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 1s;
+  }
+
+  .mobile_menu_list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile_menu_list li {
+    padding: 2rem;
+    font-size: 1.7rem;
+    opacity: 0;
+  }
+
+  .mobile_icon_list {
+    padding-top: 1rem;
+  }
+  .mobile_icon_list li {
+    display: inline;
+    padding: 1rem;
+    opacity: 0;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .overlay.visible {
+    height: 100%;
+    opacity: 0.85;
+    visibility: visible;
+  }
+
+  .overlay.visible .mobile_menu_list li {
+    animation: fadeIn 1.3s ease forwards;
+  }
+
+  .overlay.visible .mobile_menu_list li:nth-child(1) {
+    animation-delay: 0.2s;
+  }
+
+  .overlay.visible .mobile_menu_list li:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+
+  .overlay.visible .mobile_menu_list li:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  .overlay.visible .mobile_menu_list li:nth-child(4) {
+    animation-delay: 0.5s;
+  }
+
+  .overlay.visible .mobile_icon_list li {
+    animation: fadeIn 3s ease forwards;
+  }
+
   .content_project_image {
     display: flex;
     flex-direction: column;
   }
 
+  /* section 2, 3 높이 컨텐츠에 맞게 조절하기 */
   #section3,
   #section2 {
     height: auto;
   }
 
-  .title {
-    text-align: center;
-  }
-
-  nav,
-  .icons {
-    margin: 0 auto;
-    padding: 10px;
-    display: block;
-  }
+  /* about페이지 세로 정렬하기 */
   .content_wrapper_2 {
     display: block;
     padding: 10%;
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .profile_img {
+    text-align: center;
   }
 }
