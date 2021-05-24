@@ -1,3 +1,3 @@
-# week2
+# week1
 
-https://somangoi.github.io/week2/
+https://somangoi.github.io/week1/
