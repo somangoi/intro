@@ -1,3 +1,3 @@
-# week1
+# 자기소개페이지
 
-https://somangoi.github.io/week1/
+https://somangoi.github.io/intro/
